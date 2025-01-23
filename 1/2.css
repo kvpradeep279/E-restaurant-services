@@ -1,0 +1,199 @@
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000d2;
+    color: #ffffff;
+}
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar .logo .logo-img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 600px; /* Space between logo and "JKS" text */
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #444;
+    color: #47AB11;
+    border-radius: 5px;
+}
+/* Circular Profile Button */
+.profile-btn-container {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+  }
+  
+  .profile-btn {
+    margin-top: 6.5px;
+    margin-bottom: 3px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background-color: white;
+    border-color: #000000   ;
+  
+  }
+  
+  .profile-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .profile-btn a img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+  
+/* Menu Section */
+.menu-section {
+    padding: 40px 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.menu-item {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.menu-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.menu-item button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #47AB11;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-item button:hover {
+    background-color: #36910f;
+}
+
+/* Footer styling */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #47AB11;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #47AB11;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}

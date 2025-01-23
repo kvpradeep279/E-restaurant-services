@@ -1,0 +1,255 @@
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000d2;
+    color: #ffffff;
+}
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar .logo .logo-img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 600px; /* Space between logo and "JKS" text */
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #444;
+    color: #47AB11;
+    border-radius: 5px;
+}
+/* Circular Profile Button */
+.profile-btn-container {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+  }
+  
+  .profile-btn {
+    margin-top: 6.5px;
+    margin-bottom: 3px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background-color: white;
+    border-color: #000000   ;
+  
+  }
+  
+  .profile-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .profile-btn a img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+
+  
+/* Cart Section Styling */
+.cart-section {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color:black;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: black;
+}
+
+/* Styling for Cart Items */
+.cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.cart-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: calc(25% - 20px); /* Make sure the cart items are responsive */
+}
+
+.cart-item img {
+   width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item h4 {
+    font-size: 18px;
+    color: black;
+    margin: 10px 0;
+}
+
+.cart-item p {
+    color: black;
+    font-size: 16px;
+}
+
+.cart-item .delete-btn {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cart-item .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.CART {
+    position: absolute;
+    top: 100px;  /* Adjust as necessary */
+    right: 10px;  /* Adjust to position it at the top-right */
+}
+.cart-btn {
+    border: none;
+    background-color: black;
+    color: black;
+    padding: 10px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cart-btn:hover {
+    background-color: #3e9c0f;
+}
+/* Total Price Section */
+.total-price {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Message/Alert for Successful Actions */
+.message {
+    background-color: #f9e5e5;
+    color: #c0392b;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+
+
+/* Footer styling */
+footer {
+    background-color: #000000;
+    color: black;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #47AB11;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #47AB11;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}

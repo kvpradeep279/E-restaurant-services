@@ -1,0 +1,249 @@
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("flat-lay-thanksgiving-food-border-assortment-with-copy-space.jpg");
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar .logo .logo-img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 600px; /* Space between logo and "JKS" text */
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #444;
+    color: #47AB11;
+    border-radius: 5px;
+}
+/* Circular Profile Button */
+.profile-btn-container {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+  }
+  
+  .profile-btn {
+    margin-top: 6.5px;
+    margin-bottom: 3px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background-color: white;
+    border-color: #000000   ;
+  
+  }
+  
+  .profile-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .profile-btn a img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+  
+/* About Section Styling */
+.about-section {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 16px;
+    color: white;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.team-member {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 200px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Footer styling */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color:  #47AB11;
+}
+
+.footer-section p, 
+.footer-section ul, 
+.footer-section a {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color:  #47AB11;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* Footer layout adjustments */
+.footer-content .about {
+    text-align: left;
+}
+
+.footer-content .contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.footer-content .quick-links {
+    text-align: right;
+}
+
+/* Footer Newsletter input */
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 70%;
+    max-width: 250px;
+}
+
+.footer-newsletter button {
+    padding: 10px;
+    background-color: #47AB11;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+    background-color:  #47AB11;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer-newsletter input[type="email"], 
+    .footer-newsletter button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}

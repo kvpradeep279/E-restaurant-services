@@ -1,0 +1,139 @@
+<?php
+session_start();
+
+// Assuming user_id is stored in the session
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php'); // Redirect to login if not logged in
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];  // Get user ID from session
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "your_database_name";  // Replace with your actual database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch orders and their details
+$sql = "SELECT o.order_id, c.name as customer_name, oi.cart_id, oi.qty, m.food_name, m.price, o.order_status
+        FROM orders o
+        JOIN cart_items oi ON o.cart_id = oi.cart_id
+        JOIN menu m ON oi.food_id = m.food_id
+        JOIN customers c ON o.user_id = c.user_id
+        WHERE o.user_id = $user_id";
+
+$result = $conn->query($sql);
+
+// Close connection
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Admin Page</title>
+    <style>
+        /* Include your CSS here */
+        /* Same as your provided CSS */
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">Admin Panel</div>
+        <div class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="#">Orders</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header id="page-header">
+        <div class="header-content">
+            <h1>Order Management</h1>
+            <p>Manage all customer orders from here.</p>
+        </div>
+    </header>
+
+    <!-- Orders Table -->
+    <table class="order-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Items</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if ($result->num_rows > 0): ?>
+                <?php
+                $previous_order_id = null;
+                $total_amount = 0;
+                $items_list = '';
+                while($row = $result->fetch_assoc()) {
+                    if ($previous_order_id != $row['order_id']) {
+                        // Output the previous order if there's a change in order_id
+                        if ($previous_order_id != null) {
+                            echo "<tr><td>#{$previous_order_id}</td><td>{$previous_customer_name}</td><td>{$items_list}</td><td>\${$total_amount}</td><td>" . ($previous_order_status ? 'Completed' : 'Pending') . "</td><td><button>Approve</button> <button>Cancel</button></td></tr>";
+                        }
+                        // Reset for new order
+                        $previous_order_id = $row['order_id'];
+                        $previous_customer_name = $row['customer_name'];
+                        $items_list = '';
+                        $total_amount = 0;
+                    }
+                    // Add current item to the list
+                    $items_list .= $row['food_name'] . " (x" . $row['qty'] . ")<br>";
+                    $total_amount += $row['price'] * $row['qty'];
+                    $previous_order_status = $row['order_status'];
+                }
+                // Output the last order
+                echo "<tr><td>#{$previous_order_id}</td><td>{$previous_customer_name}</td><td>{$items_list}</td><td>\${$total_amount}</td><td>" . ($previous_order_status ? 'Completed' : 'Pending') . "</td><td><button>Approve</button> <button>Cancel</button></td></tr>";
+                ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="6">No orders found.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>We manage orders to provide the best service to our customers.</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@orderadmin.com</p>
+                <p>Phone: +123456789</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

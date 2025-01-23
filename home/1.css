@@ -1,0 +1,274 @@
+ /* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  /* Hero Section */
+  .hero {
+    background-image: url("wallpaperflare.com_wallpaper.jpg");
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    margin-bottom: 20px;
+  }
+  
+  .hero button {
+    padding: 10px 20px;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Specialities Section */
+  .specialities {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .specialities h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  .speciality-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 150px;
+  }
+  
+  .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  /* Food and Menu Section */
+  .food-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+  }
+  .featured-food{
+    background-color: #7d7c7c68;
+    width: 330px;
+    height: 500px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .featured-food img{
+    height: 250px;
+    width: 280px;
+  }
+  
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar .logo .logo-img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 600px; /* Space between logo and "JKS" text */
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #444;
+    color: #47AB11;
+    border-radius: 5px;
+}
+/* Circular Profile Button */
+.profile-btn-container {
+  position: absolute;
+  top: 5px;
+  right: 2px;
+}
+
+.profile-btn {
+  margin-top: 6.5px;
+  margin-bottom: 3px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  background-color: white;
+  border-color: #000000   ;
+
+}
+
+.profile-btn:hover {
+  transform: scale(1.1);
+}
+
+.profile-btn a img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #47AB11;
+}
+
+.footer-section p, 
+.footer-section ul, 
+.footer-section a {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #47AB11;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* Footer layout adjustments */
+.footer-content .about {
+    text-align: left;
+}
+
+.footer-content .contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.footer-content .quick-links {
+    text-align: right;
+}
+
+/* Footer Newsletter input */
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 70%;
+    max-width: 250px;
+}
+
+.footer-newsletter button {
+    padding: 10px;
+    background-color: #47AB11;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-newsletter button:hover {
+    background-color: #47AB11;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer-newsletter input[type="email"], 
+    .footer-newsletter button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,118 @@
+/* Global styles */
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("back.jpg");
+  background-size: cover;
+}
+
+/* Container for form elements */
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Logo styling */
+#logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 60%;
+}
+
+/* Form styling */
+form {
+  width: 350px;
+  margin: 0 auto;
+}
+
+/* Form field styling */
+form .form-field {
+  margin-bottom: 1rem;
+}
+
+/* Input fields styling */
+form input {
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  padding: 0.9rem 0.7rem;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  color: #4A4A4A;
+  text-indent: 10px;
+}
+
+/* Button styling */
+form .btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.9rem 2.5rem;
+  background-color: #47AB11;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+}
+
+/* Button hover effect */
+form .btn:hover {
+  background-color: #2d670e;
+  box-shadow: 0px 6px 8px rgb(0, 0, 0);
+}
+
+/* Admin login button styling */
+.admin-login-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.admin-login-btn .btn {
+  padding: 0.9rem 2.5rem; /* Same padding as the submit and sign up buttons */
+  background-color: #47AB11; /* Same color as submit and sign up buttons */
+  color: #fff; /* Text color same as submit and sign up buttons */
+  border-radius: 4px;
+  font-size: 17px; /* Same font size as the other buttons */
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16); /* Same shadow effect */
+}
+
+.admin-login-btn .btn:hover {
+  background-color: #2d670e; /* Same hover effect as other buttons */
+}
+
+/* Error message styling */
+.error-message {
+  color: #fff; /* White text color for better contrast */
+  background-color: #ff0000; /* Red background color for the error message */
+  font-size: 16px; /* Font size for the error message */
+  margin-top: 20px; /* Adds space above the error message */
+  padding: 15px; /* Padding around the error message for better spacing */
+  border-radius: 6px; /* Rounded corners for the error box */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow to make the box stand out */
+  width: 90%; /* Width of the error box */
+  max-width: 500px; /* Ensures the box is not too wide on large screens */
+  text-align: center; /* Centers the text inside the box */
+  margin-left: auto; /* Centers the error box horizontally */
+  margin-right: auto; /* Centers the error box horizontally */
+}
+
+/* Error message link styling */
+.error-message a {
+  color: #fff; /* White color for any links inside the error message */
+  text-decoration: underline; /* Underline links for visibility */
+  font-weight: bold; /* Bold the link text */
+}
+
+.error-message a:hover {
+  color: #ffcccc; /* Light red color when hovering over the link */
+}
